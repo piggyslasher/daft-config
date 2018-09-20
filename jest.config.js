@@ -1,0 +1,21 @@
+module.exports = {
+  coveragePathIgnorePatterns: ['/__tests__/', '/node_modules/'],
+  testEnvironment: 'node',
+  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'core', 'node'],
+  cacheDirectory: '.jest/cache',
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text-summary', 'html'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/lib/',
+    '/dist/',
+    '/integration-tests/',
+    '\\.snap$',
+    '/build/',
+    '/coverage/',
+    '/packages/.*/build',
+    '/packages/.*/dist',
+    '/packages/.*/lib',
+  ],
+}

@@ -11,7 +11,14 @@
     ],
     "plugins": [
         "transform-object-rest-spread",
-        "transform-util-promisify"
-    ],
-    "sourceMaps": "inline"
-}
+        "transform-util-promisify",
+        ["transform-class-properties", { "spec": true }],
+        [
+          "transform-es2015-modules-commonjs",
+          {
+            "spec": true
+          }
+        ]
+      ],
+      "sourceMaps": "inline"
+    }

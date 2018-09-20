@@ -1,8 +1,8 @@
 {
-  "name": "conf-env",
+  "name": "daft-conf",
   "version": "0.1.0",
-  "description": "Barebones NodeJS boilerplate",
-  "main": "index.js",
+  "description": "Stupidly simple nodejs config management",
+  "main": "./src/index.js",
   "bin": {
     "my-node-app": "./bin/cli.js"
   },
@@ -39,6 +39,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
     "chalk": "^2.4.1",
-    "cosmiconfig": "^5.0.6"
+    "cosmiconfig": "^5.0.6",
+    "lodash": "^4.17.11"
   }
 }
