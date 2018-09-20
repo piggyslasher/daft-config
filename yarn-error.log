@@ -1,0 +1,36 @@
+Arguments: 
+  /home/piggyslasher/.nvm/versions/node/v10.8.0/bin/node /usr/share/yarn/bin/yarn.js add transform-object-rest-spread
+
+PATH: 
+  /home/piggyslasher/.nvm/versions/node/v10.8.0/bin:/home/piggyslasher/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/piggyslasher/.fzf/bin:/home/piggyslasher/.local/kitty.app/bin:/home/piggyslasher/.cargo/bin:/home/piggyslasher/.local/kitty.app/bin:/usr/local/go/bin:/home/piggyslasher/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-unixorn-SLASH-git-extra-commands/bin:/home/piggyslasher/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-unixorn-SLASH-docker-helpers.zshplugin/bin:/home/piggyslasher/.cargo/bin:/home/piggyslasher/.local/kitty.app/bin:/usr/local/go/bin:/home/piggyslasher/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-unixorn-SLASH-git-extra-commands/bin:/home/piggyslasher/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-unixorn-SLASH-docker-helpers.zshplugin/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  10.8.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/transform-object-rest-spread: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:64202:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:137468:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:138440:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:138362:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1081:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
