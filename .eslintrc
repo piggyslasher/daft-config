@@ -1,12 +1,10 @@
 {
   "parser": "babel-eslint",
   "plugins": [
-    "prettier",
     "babel",
     "import",
     "jest",
-    "sort-class-members",
-    "sort-imports-es6-autofix"
+    "sort-class-members"
   ],
   "env": {
     "jasmine": true,
@@ -17,18 +15,16 @@
   },
   "extends": [
     "airbnb-base",
-    "prettier",
     "plugin:jest/recommended"
   ],
   "rules": {
     "no-unused-expressions": ["error", { "allowShortCircuit": true }],
     "class-methods-use-this":  [0],
-    "no-console": ["error", { "allow": ["log", "warn", "error"] }],
+    "no-console": ["error", { "allow": ["log", "warn"] }],
     "comma-dangle":  ["error", "always-multiline"],
-    "function-paren-newline": ["error", { "minItems": 4 }],
     "import/extensions": [0],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
-    "import/no-unresolved": [0],
+    "import/no-unresolved": [0], // TODO fix later
     "import/first": [0],
     "linebreak-style": 0,
     "no-confusing-arrow": [0],
@@ -36,7 +32,7 @@
     "no-plusplus": [0],
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
     "no-unused-expression": 0,
-    "no-unused-vars": ["error", {"vars": "all", "args": "none"}],
+    "no-unused-vars": [2, {"vars": "all", "args": "none"}],
     "prefer-rest-params": [0],
     "semi": [
         2,
@@ -45,8 +41,8 @@
     "sort-class-members/sort-class-members": [2, {
       "order": [
         "constructor",
-        "[event-handlers]",
-        "[everything-else]"
+        "[event-handlers]", // reference the custom group defined in the "groups" property
+        "[everything-else]" // a few groups are provided by default (see list below)
       ],
       "groups": {
         "event-handlers": [{ "name": "/on.+/", "type": "method" }]
@@ -54,12 +50,7 @@
       "accessorPairPositioning": "getThenSet",
       "stopAfterFirstProblem": false
     }],
-    "sort-imports": "off",
-    "sort-imports-es6-autofix/sort-imports-es6": [2, {
-      "ignoreCase": true,
-      "ignoreMemberSort": false,
-      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-    }],
+    "sort-imports": [2, { "ignoreCase": true }],
     "sort-vars": [1, { "ignoreCase": true }]
   },
   "settings": {

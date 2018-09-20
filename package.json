@@ -1,16 +1,19 @@
 {
-  "scripts": [
-    {
-      "babel-node": "babel-node"
-    }
-  ],
+  "private": true,
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-import-directory": "^1.0.3",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-util-promisify": "^0.2.2",
-    "babel-preset-env": "^1.7.0",
-    "cosmiconfig": "^5.0.6",
-    "eslint-plugin-prettier": "^2.6.2"
-  }
+    "lerna": "^3.4.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "compile": "lerna run compile",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
+    "check-packages": "yarn clean && yarn compile && yarn test && yarn lint",
+    "publish-packages": "./scripts/publish"
+  },
+  "name": "fig"
 }
