@@ -36,14 +36,14 @@ export default class Config {
     if (typeof conf === 'string') {
       // process.chdir(process.cwd())
       const explorer = cosmiconfig(conf)
-      const { config } = await explorer.search()
-      // console.log('config is a string', config)
-      return config.default || config
+      const config = await explorer.search()
+
+      console.log(`${conf} is a string`, config)
+      return config.config
     } return conf
   }
 
   static async create(conf, addCapsCase) {
-    // console.log(baseDir, getCaller())
     const o = new Config(conf, addCapsCase)
     o.hydrate(await o.loadConfig(conf), addCapsCase)
     return o

@@ -1,7 +1,12 @@
 module.exports = {
   coveragePathIgnorePatterns: ['/__tests__/', '/node_modules/'],
+  // roots: [
+  //   '<rootDir>/src',
+  //   '<rootDir>/tests',
+  // ],
+  collectCoverage: true,
+  verbose: true,
   testEnvironment: 'node',
-  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'core', 'node'],
   cacheDirectory: '.jest/cache',
   coverageDirectory: 'coverage',
@@ -18,4 +23,5 @@ module.exports = {
     '/packages/.*/dist',
     '/packages/.*/lib',
   ],
+  // testMatch: ['<rootDir>/packages/**/*.spec.js'],
 }

@@ -5,10 +5,10 @@
             "name": "Launch (with system node)",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/src/index.js",
+            "program": "${workspaceRoot}/packages/daft-conf-test/src/index.test.js",
             "stopOnEntry": false,
             "args": [],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/packages/daft-conf-test",
             "preLaunchTask": null,
             "runtimeExecutable": null,
             "runtimeArgs": [
