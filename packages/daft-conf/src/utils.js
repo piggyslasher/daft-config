@@ -13,12 +13,15 @@ export const getTruthy = (val) => {
   return val
 }
 
+export const getEnvValue = (key, defaultValue) => process.env[key] || defaultValue
+
 export const toCamelCase = camelCase
 
 // Basically return false, true with env variables are "false", "true"
-export const getSafeValue = (keyName, obj = {}, defaults = process.env) => {
-  const newValue = defaults[toCapsCase(keyName)] || obj[keyName]
-  console.log(toCapsCase(keyName), defaults[toCapsCase(keyName)], newValue)
+export const getSafeValue = (keyName, obj = {}, defaultValue) => {
+  let newValue = getEnvValue(toCapsCase(keyName), obj[keyName])
+  newValue = newValue == null ? defaultValue : newValue
+  // console.log(toCapsCase(keyName), obj[keyName], newValue)
   return (typeof newValue === 'boolean') ?
     newValue : getTruthy(newValue)
 }

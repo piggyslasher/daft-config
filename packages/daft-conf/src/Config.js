@@ -7,7 +7,7 @@ export default class Config {
       Object.entries(conf).forEach(([key, value]) => {
         if (!Reflect.has(this, key)) {
           const valueToSet = getTruthy(getSafeValue(key, conf))
-          console.log(key, valueToSet)
+          // console.log(key, valueToSet)
 
           Reflect.defineProperty(
             this,
@@ -51,7 +51,5 @@ export default class Config {
     return o
   }
 
-  get = key => getSafeValue(key, this)
-
-  GET = key => getSafeValue(toCamelCase(key), this)
+  get = (key, defaultValue) => getSafeValue(key, this, defaultValue)
 }

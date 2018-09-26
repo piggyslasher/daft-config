@@ -32,27 +32,20 @@ describe('Utils', () => {
       falseOriginallyButDoesntChange: false,
     }
 
-    const processEnvs = {
-      ...process.env,
-      ...({
-        FALSE_ORIGINALLY: 'true',
-        TRUE_ORIGINALLY: 'false',
-      }),
-    }
+    process.env.FALSE_ORIGINALLY = 'true'
+    process.env.TRUE_ORIGINALLY = 'false'
 
-    expect(getSafeValue('falseOriginally', conf, processEnvs)).toBeTruthy()
-    expect(getSafeValue('trueOriginally', conf, processEnvs)).toBeFalsy()
-    expect(getSafeValue('falseOriginallyButDoesntChange', conf, processEnvs)).toBeFalsy()
+    expect(getSafeValue('falseOriginally', conf)).toBeTruthy()
+    expect(getSafeValue('trueOriginally', conf)).toBeFalsy()
+
+    expect(getSafeValue('falseOriginallyButDoesntChange', conf)).toBeFalsy()
 
     process.env.NODE_ENV = 'AMAZING_ENV'
     expect(getSafeValue('nodeEnv')).toBe('AMAZING_ENV')
   })
 
   it('should return the overridden value if in env', () => {
-    const processEnvs = {
-      PROXY: 'false',
-    }
-    expect(getSafeValue('proxy', { proxy: 'http://proxy:port' }, processEnvs)).toBeFalsy()
-    expect(getSafeValue('proxy', { proxy: 'http://proxy:port' })).toBeTruthy()
+    process.env.PROXY = 'false'
+    expect(getSafeValue('proxy', { proxy: 'http://proxy:port' })).toBeFalsy()
   })
 })
