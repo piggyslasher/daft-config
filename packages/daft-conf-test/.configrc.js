@@ -1,5 +1,7 @@
 module.exports = {
   test: true,
-  sup: true,
-  level: 'root'
+  shouldBeTrue: true,
+  shouldBeFalse: '0',
+  level: 'root',
+  testEnv: '',
 }

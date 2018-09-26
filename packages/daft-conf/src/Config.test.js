@@ -13,6 +13,7 @@ const baseConfig = {
 describe('Config', () => {
   it('should return true if config key exists', async () => {
     const config = await Config.create(baseConfig)
+    expect(config.test).toBeTruthy()
     expect(config.get('test')).toBeTruthy()
     expect(config.GET('TEST')).toBeTruthy()
     expect(config.GET('ASDASD')).toBeFalsy()

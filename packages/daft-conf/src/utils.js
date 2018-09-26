@@ -17,8 +17,8 @@ export const toCamelCase = camelCase
 
 // Basically return false, true with env variables are "false", "true"
 export const getSafeValue = (keyName, obj = {}, defaults = process.env) => {
-  // console.log(toCapsCase(keyName), defaults[toCapsCase(keyName)], obj)
   const newValue = defaults[toCapsCase(keyName)] || obj[keyName]
+  console.log(toCapsCase(keyName), defaults[toCapsCase(keyName)], newValue)
   return (typeof newValue === 'boolean') ?
     newValue : getTruthy(newValue)
 }
